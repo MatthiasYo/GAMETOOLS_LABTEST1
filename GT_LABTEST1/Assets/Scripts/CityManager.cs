@@ -64,12 +64,20 @@ namespace GRIDCITY
             }
 
             //BUILD CITY WALLS - add your code below
-            
-          
+
+            for (int i = -6; i < 7; i += 1)
+            {
+                Instantiate(buildingPrefab, new Vector3(i, 0.05f, -6), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(wallProfile);
+                Instantiate(buildingPrefab, new Vector3(i, 0.05f, 6), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(wallProfile);
+            }
+            for (int j = -5; j < 6; j += 1)
+            {
+                Instantiate(buildingPrefab, new Vector3(-6, 0.05f, j), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(wallProfile);
+                Instantiate(buildingPrefab, new Vector3(6, 0.05f, j), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(wallProfile);
+            }
 
             //CITY BUILDINGS:
-            
-			for (int i=-4;i<5;i+=2)
+            for (int i=-4;i<5;i+=2)
             {
                 for (int j=-4;j<5;j+=2)
                 {
@@ -77,9 +85,9 @@ namespace GRIDCITY
                     Instantiate(buildingPrefab, new Vector3(i, 0.05f, j), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(profileArray[random]);                 
                 }
             }
-            
-            
-		}
+
+
+        }
 		
 		#endregion
 
